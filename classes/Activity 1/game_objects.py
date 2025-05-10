@@ -5,12 +5,16 @@ class Player:
         self.cls = cls        # Store the player's class (e.g., warrior, mage, etc.)
         self.atk = atk        # Store the player's attack power
         self.health = health  # Store the player's health points
+    def info(self):
+        return self.name,self.race,self.cls,self.atk,self.health
 
 class Weapon:
     def __init__(self,name,damage,catagory):
         self.name = name
         self.damage = damage
         self.catagory = catagory
+    def info(self):
+        return self.name,self.damage,self.catagory
     # TODO: create the method to intialise Weapon object attributes (same as above)
     # The Weapon should have self, name, category and damage (can shorten if needed)
 # TODO: Create an 'Enemy' class.
@@ -22,3 +26,5 @@ class Enemy:
         self.health = health
     # TODO: Create a method to initialise Enemy object attributes
     # Each enemy should have a name, race, damage and health
+    def info(self):
+        return self.name,self.race,self.health,self.damage
