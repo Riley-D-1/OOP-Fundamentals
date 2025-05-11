@@ -15,24 +15,21 @@ class BankAccount:
     def withdraw(self, amount):
         initial_balance =self.balance  
         new_balance = int(initial_balance) - int(amount)
-        self.balance = new_balance
+        if new_balance < 0:
+            print("Fail, not enough money")
+            pass
+        else:
+             self.balance = new_balance
     def deposit(self, amount):
         initial_balance =self.balance  
         new_balance = int(initial_balance) + int(amount)
         self.balance = new_balance        
 
-dave=BankAccount("Dave Smith",111111,"$680")
+dave=BankAccount("Dave Smith",111111,"680")
 chris = BankAccount("Chris Citizen",111112,"3")
 name = str(input("Username: "))
 password = str(input("Password: "))
-if name and password == "admin":
-    choice = str(input("Type 1 to add a customer and 2 to exit: "))
-    if choice == '1':
-        new_acc_name = input("What is the customer's name? ") 
-        new_acc_number = input("What is the customer's account number? ") 
-        new_acc_balance = input("What is the customer's balance? ") 
-else:
-    if name == chris:
+if name == "chris":
         choice_boring = str(input("Type 1 to add a deposit, 2 to withdraw and 3 to exit: "))
         amount = str(input("How much money would you like to add or remove (do not do a dollar sign just write the number as an int/float)"))
         if choice_boring == "1":
@@ -40,15 +37,15 @@ else:
             print(chris.get_bal())
         elif choice_boring == 2:
             chris.deposit(amount)
-            print(chris.get_bal)
-    elif name == dave:
-        choice_boring = str(input("Type 1 to add a deposit, 2 to withdraw and 3 to exit: "))
-        amount = str(input("How much money would you like to add or remove (do not do a dollar sign just write the number as an int/float)"))
-        if choice_boring == "1":
-            dave.withdraw(amount)
             print(chris.get_bal())
-        elif choice_boring == 2:
-            dave.deposit(amount)
-            print(dave.get_bal)
-    else:
-        print("Talk to an admin to add your account")
+elif name == "dave":
+    choice_boring = str(input("Type 1 to add a deposit, 2 to withdraw and 3 to exit: "))
+    amount = str(input("How much money would you like to add or remove (do not do a dollar sign just write the number as an int/float)"))
+    if choice_boring == "1":
+        dave.withdraw(amount)
+        print(dave.get_bal())
+    elif choice_boring == 2:
+        dave.deposit(amount)
+        print(dave.get_bal())
+else:
+    print("No account")
