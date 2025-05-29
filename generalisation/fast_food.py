@@ -11,7 +11,8 @@ class Employee:
         return datetime.datetime.now()
     def clock_out(self,start_time):
         end_time = datetime.datetime.now()
-        total_hours = start_time - end_time 
+        total_hours = end_time -  start_time.strftime("%H")
+        self.shift_hours + int(total_hours)
         print(f"Total Hours:{total_hours}")
     def get_pay(self):
         self.shift_hours * self.hourly_wage
