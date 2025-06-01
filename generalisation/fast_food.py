@@ -1,19 +1,17 @@
 import datetime
-
+from datetime import *
 class Employee:
     def __init__(self,name,employee_id,hourly_wage,shift_hours):
         self.name = name
         self.employee_id = employee_id
         self.hourly_wage = hourly_wage
         self.shift_hours = shift_hours
+        self.total_hours = 0
     def clock_in(self):
-        print(f'Shif started at {datetime.datetime.now()}')
-        return datetime.datetime.now()
-    def clock_out(self,start_time):
-        end_time = datetime.datetime.now()
-        total_hours = end_time -  start_time.strftime("%H")
-        self.shift_hours + int(total_hours)
-        print(f"Total Hours:{total_hours}")
+        print(f'{self.name} has clocked in')
+    def clock_out(self):
+        self.total_hours += self.shift_hours
+        print(f"Total Hours:{self.total_hours}")
     def get_pay(self):
         self.shift_hours * self.hourly_wage
 
