@@ -1,20 +1,14 @@
 1. 
-Programmers 
+Programmers use stubs which are temporary functions that simulate behaviour of the actual code, to test the entire system or big modules of the system ot enusre functionality without requiring the completed function. Usually the function is an API call, which they haven't finilised or don't have the key to. The stubs allow you to complete testing earlier and have a smoother intergration stage in your project.
 
-
-
-2. Why is version control important
-
+2. Why is version control important.
+Version control's important as it takes snapshot of your code through time and allows you to revert to previous versions if you make a mistake. It's also easier to collaborate with developers being able to create forks of the program in order to work on seperate "branches" or version of the control and then merge them back when they see fit. It also allows you to track every modification made to the codebase overtime.
 
 3. Explain Code optimisation in software egineering
-
-
-
-
-
-
+Code optimisation is the process of making a computer program more efficient and removing its intensity on the computer's resources. The goal is to make th program and performance of the code easier to run which allows lower hardwware to run your program better as it needs less resources. By making your program more accesible, it is more likely to succeed in it's point or purpose.
 
 4. 
+In A the classes themselves contain the print statement
 ```py
 class Player:
     def __init__(self, name, health):
@@ -37,6 +31,8 @@ bob = Player("Bob", 100)
 # One player sends a message (method call) to another
 alice.attack(bob, 25)
 ```
+In B the response by the classes is returned and the returned statement is printed by other class functions.
+
 b.
 ``` py
 class Chest:
@@ -71,7 +67,7 @@ treasure_chest = Chest(50)
 
 # Interactions using message passing
 player.open_chest(treasure_chest)   # Lara opens chest, chest gives her gold
-player.open_chest(treasure_chest
+player.open_chest(treasure_chest)
 ```
 
 
